@@ -4,10 +4,24 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
   
-name: $(Year:yy).$(DayOfYear).$(BuildID).$(Rev:.rr)
+name: $(Year:yy).$(DayOfYear).$(BuildID).$(Rev:rr)
 steps:
 - script: dotnet build --configuration $(build-configuration)
   displayName: 'dotnet build $(build-configuration)'
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'pack'
+    packagesToPack: '**/*.csproj'
+    configuration: '$(build-configuration)'
+    packDirectory: '$(nuget-dir)'
+    versioningScheme: 'byBuildNumber'
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'custom'
+    custom: 'nuget push'
+    arguments: '$(nuget-dir)/DSM.GatewayEngine.$(Build.BuildNumber).nupkg -k $(nuget-api) -s $(nuget-url)'
 
 - task: DotNetCoreCLI@2
   inputs:
@@ -23,9 +37,3 @@ steps:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'drop'
     publishLocation: 'Container'
-
-- script: dotnet pack -c Release --configuration $(build-configuration) -o $(nuget-dir) -p:PackageVersion=$(Build.BuildNumber)
-  displayName: "Nuget Pack"
-
-- script: dotnet nuget push /$(nuget-dir)/DSM.GatewayEngine.$(Build.BuildNumber).nupkg -k $(nuget-api) -s $(nuget-url)
-  displayName: "Nuget Push"
