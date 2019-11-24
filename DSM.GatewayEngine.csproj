@@ -2,14 +2,13 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <AssemblyVersion>2.0.7257.0</AssemblyVersion>
-    <FileVersion>2.0.7257.0</FileVersion>
+    <AssemblyVersion>2.0.7267.0</AssemblyVersion>
+    <FileVersion>2.0.7267.0</FileVersion>
     <Version>2.0.7248.6</Version>
     <Authors>Dogus Technology DevOps Team</Authors>
     <Company>Dogus Technology</Company>
     <Product>DSM Gateway Engine</Product>
     <Description>DSM Libraries Gateway Engine</Description>
-    <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
     <PackageProjectUrl>https://github.com/DogusTeknoloji/DSM.GatewayEngine</PackageProjectUrl>
     <PackageIconUrl>https://raw.githubusercontent.com/DogusTeknoloji/DSM-UI-Solution/master/public/favicon.jpg</PackageIconUrl>
     <RepositoryUrl>https://github.com/DogusTeknoloji/DSM.GatewayEngine</RepositoryUrl>
@@ -78,6 +77,9 @@
     <None Update="Content\js\wow.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="licenses\LICENSE.md">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="views\401.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -104,10 +106,6 @@
     </None>
     <None Update="views\welcome.sshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="LICENSE.md">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
     </None>
   </ItemGroup>
 
