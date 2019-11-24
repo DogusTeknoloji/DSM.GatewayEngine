@@ -9,12 +9,13 @@
     <Company>Dogus Technology</Company>
     <Product>DSM Gateway Engine</Product>
     <Description>DSM Libraries Gateway Engine</Description>
-    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
-    <PackageProjectUrl>https://github.com/DogusTeknoloji/DSM-UI-Solution</PackageProjectUrl>
+    <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
+    <PackageProjectUrl>https://github.com/DogusTeknoloji/DSM.GatewayEngine</PackageProjectUrl>
     <PackageIconUrl>https://raw.githubusercontent.com/DogusTeknoloji/DSM-UI-Solution/master/public/favicon.jpg</PackageIconUrl>
-    <RepositoryUrl>https://github.com/DogusTeknoloji/dsm-orm</RepositoryUrl>
+    <RepositoryUrl>https://github.com/DogusTeknoloji/DSM.GatewayEngine</RepositoryUrl>
     <RepositoryType>Library</RepositoryType>
     <PackageTags>Open APMM, Service Monitoring , Performance Monitoring</PackageTags>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -103,6 +104,10 @@
     </None>
     <None Update="views\welcome.sshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="LICENSE.md">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
     </None>
   </ItemGroup>
 
