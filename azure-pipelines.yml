@@ -17,13 +17,9 @@ steps:
     nobuild: true
     versioningScheme: 'byBuildNumber'
     verbosityPack: 'Diagnostic'
-    
-- task: DotNetCoreCLI@2
-  inputs:
-    command: 'push'
-    packagesToPush: '$(Build.ArtifactStagingDirectory)/*.nupkg'
-    nuGetFeedType: 'external'
-    publishFeedCredentials: 'Nuget.Org'
+
+- script: dotnet nuget push $(Build.ArtifactStagingDirectory)/*.nupkg -k $(nuget-apikey) -s $(nuget-url)
+  displayName: 'dotnet nuget push $(Build.ArtifactStagingDirectory)/*.nupkg'
 
 - task: DotNetCoreCLI@2
   inputs:
