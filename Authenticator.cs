@@ -31,19 +31,19 @@ namespace DSM.GatewayEngine
         private static bool SignUpAgentService(string username, string password)
         {
             bool result = _gatewayAutheticationRepository.SignUpAgent(username, password);
-            Gateway.logManager.Write(string.Format("Searching the device on Database {0}", result ? "Unknown Device" : "Known Device"));
+            Gateway._logManager.Write(string.Format("Searching the device on Database {0}", result ? "Unknown Device" : "Known Device"));
             return result;
         }
         private static bool IsValidUser(string username, string password)
         {
             bool result = _gatewayAutheticationRepository.IsValidUser(username, password);
-            Gateway.logManager.Write(string.Format("User Validation -> {0}!", result ? "Success" : "Failed"));
+            Gateway._logManager.Write(string.Format("User Validation -> {0}!", result ? "Success" : "Failed"));
             return result;
         }
         private static string AcquireApiKey(string username, string password)
         {
             string apiKey = _gatewayAutheticationRepository.ObtainApiKey(username, password);
-            Gateway.logManager.Write($"Acquiring ApiKey -> Success! ({apiKey})");
+            Gateway._logManager.Write($"Acquiring ApiKey -> Success! ({apiKey})");
             return apiKey;
         }
         private static void RemoveApiKey(string apiKey)
@@ -63,7 +63,7 @@ namespace DSM.GatewayEngine
         {
             string userName = (string)Request.Form.Username;
             string password = (string)Request.Form.Password;
-            Gateway.logManager.Write($"Reading Device Info -> Success! ({userName}/{password})");
+            Gateway._logManager.Write($"Reading Device Info -> Success! ({userName}/{password})");
             switch (password)
             {
                 case "DSM.Agents.MonitorService":

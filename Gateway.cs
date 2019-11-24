@@ -10,15 +10,15 @@ namespace DSM.GatewayEngine
 {
     public class Gateway : IDisposable
     {
-        internal static LogManager logManager = LogManager.GetManager("DSM.GatewayEngine");
+        internal static LogManager _logManager = LogManager.GetManager("DSM.GatewayEngine");
 
         private readonly IWebHost _server;
 
-        private static readonly IConfiguration config = AppSettingsManager.GetConfiguration();
+        private static readonly IConfiguration _config = AppSettingsManager.GetConfiguration();
 
         public Gateway()
         {
-            int port = config.GetValue<int>("Host:Port");
+            int port = _config.GetValue<int>("Host:Port");
             string localIpAddr = Core.Ops.Extensions.GetLocalIPAddress();
             IList<string> hosts = new List<string>
             {
@@ -26,7 +26,7 @@ namespace DSM.GatewayEngine
                 $"http://{localIpAddr}:{port}"
             };
 
-            logManager.Write($"Hosts -> {string.Join(", ", hosts)}");
+            _logManager.Write($"Hosts -> {string.Join(", ", hosts)}");
 
             _server = new WebHostBuilder()
                 .UseContentRoot(Directory.GetCurrentDirectory())
@@ -41,7 +41,7 @@ namespace DSM.GatewayEngine
             _server.Run();
 
             XConsole.SetTitle("DSM Gateway");
-            logManager.Write($"Gateway RUNNING UP!");
+            _logManager.Write($"Gateway RUNNING UP!");
         }
 
         ~Gateway()
