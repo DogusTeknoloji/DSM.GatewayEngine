@@ -13,15 +13,14 @@ steps:
   inputs:
     command: 'pack'
     packagesToPack: '**/*.csproj'
-    configuration: '$(build-configuration)'
-    packDirectory: '$(nuget-dir)'
     versioningScheme: 'byBuildNumber'
 
 - task: DotNetCoreCLI@2
   inputs:
-    command: 'custom'
-    custom: 'nuget push'
-    arguments: '$(nuget-dir)/DSM.GatewayEngine.$(Build.BuildNumber).nupkg -k $(nuget-api) -s $(nuget-url)'
+    command: 'push'
+    packagesToPush: '$(Build.ArtifactStagingDirectory)/*.nupkg'
+    nuGetFeedType: 'external'
+    publishFeedCredentials: 'Nuget.Org'
 
 - task: DotNetCoreCLI@2
   inputs:
@@ -32,6 +31,8 @@ steps:
   inputs:
     Contents: '**/$(build-dir)/**'
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
+    CleanTargetFolder: true
+
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
