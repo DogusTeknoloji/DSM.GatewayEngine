@@ -13,8 +13,10 @@ steps:
   inputs:
     command: 'pack'
     packagesToPack: '**/*.csproj'
+    configuration: '$(build-configuration)'
     nobuild: true
     versioningScheme: 'byBuildNumber'
+    verbosityPack: 'Diagnostic'
     
 - task: DotNetCoreCLI@2
   inputs:
