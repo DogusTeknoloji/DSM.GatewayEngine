@@ -17,9 +17,9 @@ namespace DSM.GatewayEngine
                 {
                     default: break;
                     case HttpStatusCode.NotFound:
-                        fileName = string.Concat(executingRoot, "\\NGIndex\\404.html"); break;
+                        fileName = string.Concat(executingRoot, "\\views\\404.html"); break;
                     case HttpStatusCode.Unauthorized:
-                        fileName = string.Concat(executingRoot, "\\NGIndex\\401.html"); break;
+                        fileName = string.Concat(executingRoot, "\\views\\401.html"); break;
                 }
                 using (FileStream file = File.OpenRead(fileName))
                 {

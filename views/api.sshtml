@@ -2,8 +2,8 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>NGWay Gates</title>
-    <meta name="description" content="This is a free Bootstrap landing page theme created for BootstrapZero. Feature video background and one page design." />
+    <title>DSM Gates</title>
+    <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="Codeply">
 	<link rel="icon" href="@Path['~/Content/assets/favicon.ico']" type="image/x-icon"/>

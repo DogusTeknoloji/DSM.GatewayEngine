@@ -32,24 +32,39 @@ namespace DSM.GatewayEngine
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseUrls(hosts.ToArray())
                 .UseStartup<Startup>()
-                .UseKestrel()
+                .UseKestrel(options =>
+                {
+                    options.AllowSynchronousIO = true;
+                })
                 .Build();
 
             _server.Run();
 
-            XConsole.SetTitle("DTIISM - Nancy Gateway");
+            XConsole.SetTitle("DSM Gateway");
             logManager.Write($"Gateway RUNNING UP!");
         }
 
         ~Gateway()
         {
-            Dispose();
+            Dispose(false);
         }
 
         public void Dispose()
         {
-            _server.StopAsync();
-            _server.Dispose();
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                if (_server != null)
+                {
+                    _server.StopAsync();
+                    _server.Dispose();
+                }
+            }
         }
     }
 }
