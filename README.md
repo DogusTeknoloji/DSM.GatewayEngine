@@ -1,9 +1,21 @@
-# [DSM Services](https://github.com/DogusTeknoloji/DSM.Agents.MonitorService)
 
 ![Product Gif](./dsm-logo.png)
 
+## About DSM
+###### Info
+![RepoSize](https://img.shields.io/github/repo-size/dogusteknoloji/dsm.gatewayengine?style=flat-square)
+![Issues](https://img.shields.io/github/issues/dogusteknoloji/dsm.gatewayengine?style=flat-square)
+![Licenses](https://img.shields.io/github/license/dogusteknoloji/dsm.gatewayengine?style=flat-square)
 
-**[DSM]** is an middleware management and reporting tool designed to be strong and simple. It is build with C#. It can be used to collect IIS Site info,bindings,logs,site backends and more...
+###### Build Status
+[![Build Status](https://dtalm.visualstudio.com/DUY%20Self%20Service/_apis/build/status/DogusTeknoloji.DSM.GatewayEngine?branchName=master)](https://dtalm.visualstudio.com/DUY%20Self%20Service/_build/latest?definitionId=751&branchName=master)
+
+###### Nuget Downloads  
+![Nuget](https://img.shields.io/nuget/v/dsm.gatewayengine?style=flat-square)
+![Downloads](https://img.shields.io/nuget/dt/dsm.gatewayengine?label=Downloads&style=flat-square)
+
+
+**DSM** is an middleware management and reporting tool designed to be strong and simple. It is build with C#. It can be used to collect IIS Site info,bindings,logs,site backends and more...
 
 The product represents a big suite of middleware management tools that can help you easily watch and manage your services. 
 
@@ -11,6 +23,11 @@ The product represents a big suite of middleware management tools that can help 
 
 If you have questions or need help integrating the product please [contact us](https://www.d-teknoloji.com.tr).
 
+## Contributing to DSM
+Follow the [contributing](CONTRIBUTING.md) file.
+
 ## Licensing
 
-- Copyright 2019 Doğuş Teknoloji - DUY
+DSM is **licensed** under the **[GNU/GPL v3 License]**.
+
+[GNU/GPL v3 License]: https://github.com/DogusTeknoloji/DSM.GatewayEngine/blob/master/LICENSE
