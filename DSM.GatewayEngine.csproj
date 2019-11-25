@@ -23,9 +23,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="DSM.Core" Version="1.0.7257" />
-    <PackageReference Include="DSM.OrmService" Version="1.0.7248.5" />
-    <PackageReference Include="FluentValidation" Version="8.5.0" />
+    <PackageReference Include="DSM.Core" Version="19.328.2" />
+    <PackageReference Include="DSM.OrmService" Version="19.328.2" />
+    <PackageReference Include="FluentValidation" Version="8.5.1" />
     <PackageReference Include="Microsoft.AspNetCore.Hosting" Version="2.2.7" />
     <PackageReference Include="Microsoft.AspNetCore.Owin" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Server.Kestrel" Version="2.2.0" />
@@ -77,7 +77,7 @@
     <None Update="Content\js\wow.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="licenses\LICENSE.md">
+    <None Update="LICENSE.md">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="views\401.html">
