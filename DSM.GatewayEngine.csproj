@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <AssemblyVersion>2.0.7267.0</AssemblyVersion>
-    <FileVersion>2.0.7267.0</FileVersion>
+    <AssemblyVersion>2.0.7268.2</AssemblyVersion>
+    <FileVersion>2.0.7268.2</FileVersion>
     <Version>2.0.7248.6</Version>
     <Authors>Dogus Technology DevOps Team</Authors>
     <Company>Dogus Technology</Company>
@@ -23,8 +23,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="DSM.Core" Version="19.328.2" />
-    <PackageReference Include="DSM.OrmService" Version="19.328.2" />
+    <PackageReference Include="DSM.Core" Version="19.329.3" />
+    <PackageReference Include="DSM.OrmService" Version="19.329.1" />
     <PackageReference Include="FluentValidation" Version="8.5.1" />
     <PackageReference Include="Microsoft.AspNetCore.Hosting" Version="2.2.7" />
     <PackageReference Include="Microsoft.AspNetCore.Owin" Version="2.2.0" />
