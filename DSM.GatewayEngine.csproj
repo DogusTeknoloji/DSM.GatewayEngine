@@ -27,7 +27,7 @@
     <PackageReference Include="DSM.OrmService" Version="19.329.1" />
     <PackageReference Include="FluentValidation" Version="8.5.1" />
     <PackageReference Include="Microsoft.AspNetCore.Hosting" Version="2.2.7" />
-    <PackageReference Include="Microsoft.AspNetCore.Owin" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Owin" Version="3.1.8" />
     <PackageReference Include="Microsoft.AspNetCore.Server.Kestrel" Version="2.2.0" />
     <PackageReference Include="Nancy" Version="2.0.0" />
     <PackageReference Include="Nancy.Authentication.Stateless" Version="2.0.0" />
